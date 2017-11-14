@@ -1,0 +1,14 @@
+<h1>List of Fake Articles</h1>
+
+<% @articles.each do |a| %>
+<h3> <%= a.title %> </h3>
+<p> <%= a.content %> </p>
+<!-- link_to "some words" path -->
+<p> <%= link_to "Read Full Article", article_path(a) %> </p>
+<p> <%= link_to "Edit Details", edit_article_path(a) %> </p>
+<p> <%= link_to "Delete Article", article_path(a), method: :delete, data: {confirm: "Are you sure?!"} %> </p>
+<% end %>
+
+<h4>
+  <%= link_to "New Article",  new_article_path %>
+</h4>
